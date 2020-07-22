@@ -1,0 +1,26 @@
+type Query {
+  messages: [Message]!
+  users:[User]!
+  user(userId: ID!) : User
+  agency(agencyId: ID!): Agency
+  agencies:[Agency]!
+  cars: [Car]!
+  car(carId: ID!):Car
+  
+}
+
+type Mutation {
+  addMessage(input: MessageInput!): Message!
+  addUser(input: UserInput): User 
+  addCar(input: CarInput): Car 
+  updateUser(input: UserInput): User
+  updateCar(input: CarInput): Car
+  updateAgency(input: AgencyInput): Agency
+  removeUser(id:ID!): Boolean
+  removeAgency(id: ID!): Boolean
+  removeCar(id: ID!): Boolean
+  removeCarAgency(id: ID!): Boolean
+  login(input: UserInput): UserLogged
+  addAgency(input:AgencyInput!): Agency
+
+}

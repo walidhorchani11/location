@@ -1,0 +1,103 @@
+type Message {
+  id: ID!
+  text: String!
+}
+
+input MessageInput {
+  text: String!
+}
+type Car {
+  id: ID
+  agency: Agency
+  year: String
+  matricule: String
+  vynyle : String
+  assurance : String
+  entretien : String
+  vidange : String 
+  capacity : String 
+  disponibilite: String
+  conducteur : String 
+  gps : gpsstatus
+  photo: String
+
+
+}
+type User{
+  id: ID
+  name: String!
+  password: String!
+  job: String!
+  email: String!
+  isAdmin:userRole
+  photo:String
+  confirmPassword: String
+  agency:Agency
+  car:[Car]
+
+
+}
+type Agency {
+  id: ID
+  name: String
+  matricule: String
+  activity: String
+  isFtav: ftavRole
+  car : [Car]
+}
+input UserInput{
+  id: ID
+  name: String
+  password: String
+  job: String
+  email: String
+  isAdmin:userRole
+  photo:String
+  confirmPassword: String
+  agency: AgencyInput
+  car: CarInput
+
+}
+input AgencyInput{
+  id: ID
+  name: String
+  matricule: String
+  activity: String
+  isFtav: ftavRole
+  car: CarInput
+}
+input CarInput {
+  id: ID
+  agency: String
+  year: String
+  matricule: String
+  vynyle : String
+  assurance : String
+  entretien : String
+  vidange : String 
+  capacity : String 
+  disponibilite: String
+  conducteur : String 
+  gps : gpsstatus
+  photo: String
+}
+
+type UserLogged{
+  token: String
+  email: String
+  name: String
+  id: ID
+  photo: String
+}
+  enum userRole {
+    ADMIN
+    USER
+}
+ enum ftavRole {
+    OUI
+    NON
+}
+enum gpsstatus {
+    OUI
+    NON
+}
