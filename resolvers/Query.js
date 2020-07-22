@@ -40,6 +40,9 @@ const Query = {
     const car = await ctx.models.Car.findById(carId).populate('agency');
     return car, { id: _id };
   },
+  carByMatricule: async (_, { carMatricule }, ctx) => {
+    return await ctx.models.Car.findOne({ matricule: carMatricule });
+  },
 };
 
 module.exports = Query;

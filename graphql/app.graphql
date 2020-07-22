@@ -1,26 +1,25 @@
 type Query {
   messages: [Message]!
-  users:[User]!
-  user(userId: ID!) : User
+  users: [User]!
+  user(userId: ID!): User
   agency(agencyId: ID!): Agency
-  agencies:[Agency]!
+  agencies: [Agency]!
   cars: [Car]!
-  car(carId: ID!):Car
-  
+  car(carId: ID!): Car
+  carByMatricule(carMatricule: String!): Car
 }
 
 type Mutation {
   addMessage(input: MessageInput!): Message!
-  addUser(input: UserInput): User 
-  addCar(input: CarInput): Car 
+  addUser(input: UserInput): User
+  addCar(input: CarInput): Car
   updateUser(input: UserInput): User
   updateCar(input: CarInput): Car
   updateAgency(input: AgencyInput): Agency
-  removeUser(id:ID!): Boolean
+  removeUser(id: ID!): Boolean
   removeAgency(id: ID!): Boolean
   removeCar(id: ID!): Boolean
   removeCarAgency(id: ID!): Boolean
   login(input: UserInput): UserLogged
-  addAgency(input:AgencyInput!): Agency
-
+  addAgency(input: AgencyInput!): Agency
 }
